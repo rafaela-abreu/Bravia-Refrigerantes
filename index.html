@@ -10,7 +10,7 @@
     <meta property="og:image" content="/bravia-hero-final.png" />
     <meta name="twitter:card" content="summary_large_image" />
     <title>BRÁVIA Refrigerantes | A pátria amada do Brasil</title>
-    <link rel="stylesheet" href="styles.css?v=20261008-audio-cesta" />
+    <link rel="stylesheet" href="styles.css?v=20261008-bravia-final" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -37,22 +37,22 @@
           <source src="bravia-main-video.mp4?v=20261008-audio-cesta" type="video/mp4" />
           Seu navegador não consegue reproduzir o vídeo da Brávia.
         </video>
-        <audio id="background-music" autoplay loop preload="auto" aria-label="Música de fundo da BRÁVIA">
-          <source src="bravia-trilha.mp3?v=20261008-audio-cesta" type="audio/mpeg" />
+        <audio id="background-music" loop preload="auto" aria-label="Música oficial da BRÁVIA">
+          <source src="bravia-trilha.mp3?v=20261008-bravia-final" type="audio/mpeg" />
         </audio>
-        <button class="sound-toggle" id="sound-toggle" type="button" aria-label="Ativar música de fundo" aria-pressed="false">
-          <svg class="sound-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-            <path d="M11 5 6 9H3v6h3l5 4V5Z"></path>
-            <path class="sound-wave" d="M15.5 8.5a5 5 0 0 1 0 7"></path>
-            <path class="sound-wave" d="M18.5 5.5a9 9 0 0 1 0 13"></path>
-            <path class="sound-muted-mark" d="m16 9 5 6m0-6-5 6"></path>
-          </svg>
-        </button>
         <div class="video-overlay"><span class="video-kicker">BRÁVIA REFRIGERANTES</span><strong>Uma bebida nativa.<br />Uma história viva.</strong><span class="video-loop">vídeo de divulgação · reprodução contínua</span></div>
       </section>
       <section class="hero section-shell" aria-labelledby="hero-title">
         <div class="hero-copy">
           <h1 id="hero-title">A pátria amada<br /><em>do Brasil.</em></h1>
+          <div class="music-player-card" id="music-player-card" role="group" aria-label="Player da música oficial da BRÁVIA">
+            <button class="music-play-toggle" id="music-play-toggle" type="button" aria-label="Ouvir a música oficial da Brávia" aria-pressed="false">
+              <span class="music-player-art" aria-hidden="true"><span class="music-note">♪</span><span class="music-wave"><i></i><i></i><i></i><i></i><i></i></span></span>
+              <span class="music-player-copy"><strong id="music-play-label">Ouvir a música oficial da Brávia</strong><span class="music-player-status sr-only" id="music-player-status" aria-live="polite">Música desligada.</span></span>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path class="music-play-icon" d="M8 5v14l11-7z"></path><g class="music-pause-icon" hidden><path d="M7 5h4v14H7z"></path><path d="M15 5h4v14h-4z"></path></g></svg>
+            </button>
+            <button class="music-disable-toggle" id="music-disable" type="button" disabled>Desativar música</button>
+          </div>
           <p class="hero-lede">Uma receita de presença intensa, criada para marcar o encontro. As primeiras garrafas BRÁVIA já podem chegar geladas na sua mesa.</p>
           <div class="hero-actions">
             <a class="button button-primary" href="#delivery">Pedir delivery gelado <span aria-hidden="true">↗</span></a>
@@ -73,7 +73,7 @@
             <div class="portrait-glow"></div><div class="portrait-initial">R</div>
           <div class="portrait-caption"><span>Rafaela Abreu</span><small>criadora da BRÁVIA · Brasília, DF</small></div>
           </div>
-          <div class="manifesto-copy"><p class="serif-kicker">Manifesto BRÁVIA</p><h2 id="story-title">Refrigerante<br /><em>mais gostoso do mundo.</em></h2><div class="story-text"><p>Das origens brasileiras e africanas, atravessadas pela violência da colonização portuguesa, nasce uma memória guardada há séculos: a fórmula do refrigerante mais perfeito do mundo.</p><p>Agora, a neta dessa árvore genealógica lança ao mundo esta preciosidade africana. A bebida mundial agora na sua mesa.</p><p>Com muito orgulho, eu lanço a BRÁVIA Refrigerantes, criada e desenvolvida pela engenheira e arquiteta de software Rafaela Abreu, neta de raízes africanas.</p></div><div class="signature">Rafaela Abreu <span>—</span> criadora e fundadora</div></div>
+          <div class="manifesto-copy"><p class="serif-kicker">Manifesto BRÁVIA</p><h2 id="story-title">Refrigerante<br /><em>A bebida gelada, mas saudável e saborosa.</em></h2><div class="founder-credential"><span class="founder-credential-mark" aria-hidden="true">RA</span><span><strong>Rafaela Abreu</strong><small>Engenheira e Arquiteta de Software</small></span></div><div class="story-text"><p>Das origens brasileiras e africanas, atravessadas pela violência da colonização portuguesa, nasce uma memória guardada há séculos: a fórmula do refrigerante mais perfeito do mundo.</p><p>Agora, a neta dessa árvore genealógica lança ao mundo esta preciosidade africana. A bebida mundial agora na sua mesa.</p><p>Com muito orgulho, eu lanço a BRÁVIA Refrigerantes, criada e desenvolvida pela engenheira e arquiteta de software Rafaela Abreu, neta de raízes africanas.</p></div><div class="signature">Rafaela Abreu <span>—</span> criadora e fundadora</div></div>
         </div>
       </section>
 
@@ -110,6 +110,6 @@
     <footer class="site-footer"><div class="footer-brand"><span class="brand-mark">B</span><div><strong>BRÁVIA</strong><small>REFRIGERANTES</small></div></div><p>Das raízes brasileiras à mesa de milhões 🇧🇷🔴🫗</p><div class="footer-claim">Igual a essa eu sei que não tem.<br /><strong>A forte Brávia Refrigerantes.</strong></div><div class="footer-bottom"><span>© 2026 Brávia Refrigerantes</span><span>Uma história brasileira em cada gole.</span></div></footer>
     <a class="whatsapp-float" href="https://wa.me/5561994431648" target="_blank" rel="noreferrer" aria-label="Falar com a Bravia pelo WhatsApp"><span>◔</span></a>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="app.js?v=20261008-audio-scroll"></script>
+    <script src="app.js?v=20261008-bravia-final"></script>
   </body>
 </html>

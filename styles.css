@@ -52,3 +52,89 @@ body{background:var(--red);font-weight:500;letter-spacing:.005em}.top-ribbon{bac
 .delivery-promise small{color:#6b5350}
 
 @media(max-width:900px){.delivery-art{height:auto;aspect-ratio:4/5}}
+
+
+/* Player principal da música oficial: acessível, responsivo e junto ao título da hero */
+.music-player-card{position:relative;display:grid;grid-template-columns:50px minmax(0,1fr);align-items:center;gap:12px 14px;width:min(100%,540px);margin:0 0 26px;padding:15px 16px;background:#fff8ee;color:#111;border:3px solid #111;box-shadow:8px 8px 0 #111}
+.music-player-art{width:50px;height:50px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;background:#f20f22;color:#111;border:2px solid #111}
+.music-note{font-family:Georgia,serif;font-size:27px;line-height:.9;font-weight:700}
+.music-wave{height:9px;display:flex;align-items:center;gap:2px}
+.music-wave i{display:block;width:2px;height:4px;background:#111;border-radius:2px}
+.music-wave i:nth-child(2),.music-wave i:nth-child(4){height:7px}
+.music-wave i:nth-child(3){height:9px}
+.music-player-copy{min-width:0;display:flex;flex-direction:column;gap:3px}
+.music-player-kicker{font-size:9px;letter-spacing:.16em;font-weight:800;color:#8e1821}
+.music-player-copy strong{font-size:clamp(14px,1.5vw,18px);line-height:1.2;color:#111}
+.music-player-status{font-size:11px;line-height:1.4;color:#5d4c43}
+.music-player-actions{grid-column:1/-1;display:flex;align-items:stretch;gap:9px}
+.music-play-toggle,.music-disable-toggle{min-height:44px;display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:10px 13px;border:2px solid #111;font:800 12px/1.2 var(--sans);cursor:pointer;transition:transform .18s ease,box-shadow .18s ease,background .18s ease}
+.music-play-toggle{flex:1;background:#f20f22;color:#111;box-shadow:3px 3px 0 #111}
+.music-play-toggle:hover,.music-disable-toggle:not(:disabled):hover{transform:translateY(-1px);box-shadow:4px 4px 0 #111}
+.music-play-toggle svg{width:18px;height:18px;flex:none;fill:currentColor}
+.music-disable-toggle{flex:none;background:transparent;color:#111;font-size:11px}
+.music-disable-toggle:disabled{opacity:.48;cursor:not-allowed}
+.music-player-card.is-playing .music-player-art{background:#111;color:#f2c777}
+.music-player-card.is-playing .music-wave i{background:#f2c777;animation:music-equalizer .72s ease-in-out infinite alternate}
+.music-player-card.is-playing .music-wave i:nth-child(2){animation-delay:.12s}
+.music-player-card.is-playing .music-wave i:nth-child(3){animation-delay:.25s}
+.music-player-card.is-playing .music-wave i:nth-child(4){animation-delay:.38s}
+.music-player-card.is-playing .music-wave i:nth-child(5){animation-delay:.16s}
+@keyframes music-equalizer{from{transform:scaleY(.45)}to{transform:scaleY(1.5)}}
+.music-play-toggle:focus-visible,.music-disable-toggle:focus-visible{outline:3px solid #111;outline-offset:3px}
+
+/* Assinatura profissional que ocupa o espaço logo abaixo do título do manifesto */
+.manifesto-copy #story-title{margin-bottom:17px}
+.founder-credential{max-width:460px;display:flex;align-items:center;gap:12px;padding:12px 15px;margin:0 0 17px;background:#fff;border:2px solid #111;border-left:5px solid #f20f22}
+.founder-credential-mark{width:36px;height:36px;flex:none;display:grid;place-items:center;background:#f20f22;color:#111;border:2px solid #111;border-radius:50%;font-size:11px;font-weight:900;letter-spacing:-.05em}
+.founder-credential strong,.founder-credential small{display:block;color:#111}
+.founder-credential strong{font-size:14px;line-height:1.2}
+.founder-credential small{margin-top:3px;font-size:11px;line-height:1.35;color:#59443e}
+
+@media(max-width:620px){.music-player-card{grid-template-columns:44px minmax(0,1fr);gap:10px 12px;width:100%;padding:12px;margin-bottom:22px;box-shadow:6px 6px 0 #111}.music-player-art{width:44px;height:44px}.music-player-actions{gap:7px}.music-play-toggle{padding:10px 8px;font-size:11px}.music-disable-toggle{padding:10px 8px;font-size:10px}.founder-credential{padding:11px 12px}}
+@media(prefers-reduced-motion:reduce){.music-player-card.is-playing .music-wave i{animation:none}}
+
+
+/* Ajuste final: o texto e a ilustração do cartão ficam dentro do botão clicável */
+.music-player-card{position:relative;display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:stretch;gap:8px;width:min(100%,540px);margin:0 0 26px;padding:9px;background:#fff8ee;color:#111;border:3px solid #111;box-shadow:8px 8px 0 #111}
+.music-player-card .music-play-toggle{min-width:0;width:100%;display:grid;grid-template-columns:50px minmax(0,1fr) 22px;align-items:center;gap:12px;padding:8px 10px;border:0;background:transparent;color:#111;box-shadow:none;text-align:left;font:inherit;cursor:pointer;transition:background .18s ease}
+.music-player-card .music-play-toggle:hover{background:#f8ead8}
+.music-player-card .music-player-art{width:50px;height:50px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;background:#f20f22;color:#111;border:2px solid #111}
+.music-player-card .music-note{font-family:Georgia,serif;font-size:27px;line-height:.9;font-weight:700}
+.music-player-card .music-wave{height:9px;display:flex;align-items:center;gap:2px}
+.music-player-card .music-wave i{display:block;width:2px;height:4px;background:#111;border-radius:2px}
+.music-player-card .music-wave i:nth-child(2),.music-player-card .music-wave i:nth-child(4){height:7px}
+.music-player-card .music-wave i:nth-child(3){height:9px}
+.music-player-card .music-player-copy{min-width:0;display:flex;flex-direction:column;gap:3px}
+.music-player-card .music-player-kicker{font-size:9px;letter-spacing:.16em;font-weight:800;color:#8e1821}
+.music-player-card .music-player-copy strong{font-size:clamp(13px,1.5vw,18px);line-height:1.2;color:#111}
+.music-player-card .music-player-status{font-size:10px;line-height:1.4;color:#5d4c43}
+.music-player-card .music-play-toggle>svg{width:20px;height:20px;flex:none;fill:currentColor}
+.music-player-card .music-play-toggle [hidden]{display:none!important}
+.music-player-card .music-disable-toggle{align-self:stretch;min-width:108px;display:inline-flex;align-items:center;justify-content:center;padding:10px 12px;border:1.5px solid #111;background:transparent;color:#111;font:800 11px/1.2 var(--sans);cursor:pointer;transition:background .18s ease,opacity .18s ease}
+.music-player-card .music-disable-toggle:not(:disabled):hover{background:#f3e3cf}
+.music-player-card .music-disable-toggle:disabled{opacity:.48;cursor:not-allowed}
+.music-player-card.is-playing .music-player-art{background:#111;color:#f2c777}
+.music-player-card.is-playing .music-wave i{background:#f2c777;animation:music-equalizer .72s ease-in-out infinite alternate}
+.music-player-card.is-playing .music-wave i:nth-child(2){animation-delay:.12s}
+.music-player-card.is-playing .music-wave i:nth-child(3){animation-delay:.25s}
+.music-player-card.is-playing .music-wave i:nth-child(4){animation-delay:.38s}
+.music-player-card.is-playing .music-wave i:nth-child(5){animation-delay:.16s}
+.music-player-card .music-play-toggle:focus-visible,.music-player-card .music-disable-toggle:focus-visible{outline:3px solid #111;outline-offset:3px}
+@media(max-width:620px){.music-player-card{grid-template-columns:minmax(0,1fr) auto;gap:5px;width:100%;padding:7px;margin-bottom:22px;box-shadow:6px 6px 0 #111}.music-player-card .music-play-toggle{grid-template-columns:42px minmax(0,1fr) 18px;gap:8px;padding:7px 5px}.music-player-card .music-player-art{width:42px;height:42px}.music-player-card .music-player-copy strong{font-size:12px}.music-player-card .music-player-status{font-size:9px}.music-player-card .music-disable-toggle{min-width:82px;padding:7px 5px;font-size:9px}}
+@media(max-width:365px){.music-player-card{grid-template-columns:minmax(0,1fr);gap:5px}.music-player-card .music-disable-toggle{min-height:34px}}
+@media(prefers-reduced-motion:reduce){.music-player-card.is-playing .music-wave i{animation:none}}
+
+/* Contraste do subtítulo do manifesto no fundo claro */
+.manifesto-copy #story-title em{color:#8e1821}
+
+
+/* Interface enxuta: apenas a chamada pedida fica visível; o estado segue acessível */
+.music-player-card .music-player-kicker{display:none}
+.music-player-card .music-player-copy{gap:0}
+.music-player-card .music-player-copy strong{font-size:clamp(14px,1.6vw,18px);line-height:1.25;color:#111}
+.music-player-card .music-player-status.sr-only{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
+@media(max-width:620px){.music-player-card .music-player-copy strong{font-size:12px}}
+
+/* Subtítulo do manifesto: contraste e tamanho equilibrado para a nova frase */
+.manifesto-copy #story-title em{display:block;margin-top:10px;color:#8e1821;font-size:clamp(25px,3.1vw,38px);font-style:normal;font-weight:600;line-height:1.1;letter-spacing:-.025em}
+@media(max-width:620px){.manifesto-copy #story-title em{font-size:clamp(23px,6.3vw,31px)}}
