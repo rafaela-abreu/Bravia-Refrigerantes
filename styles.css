@@ -27,3 +27,28 @@ body{background:var(--red);font-weight:500;letter-spacing:.005em}.top-ribbon{bac
 
 /* Controle discreto da trilha sonora no vídeo principal */
 .sound-toggle{position:absolute;z-index:4;right:clamp(18px,4vw,48px);bottom:clamp(18px,4vw,42px);display:grid;place-items:center;width:48px;height:48px;border:1px solid rgba(255,248,238,.78);border-radius:50%;background:rgba(30,12,12,.58);color:#fff8ee;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);transition:background .2s ease,transform .2s ease,box-shadow .2s ease}.sound-toggle:hover{background:rgba(142,24,33,.92);transform:translateY(-2px);box-shadow:0 5px 18px rgba(0,0,0,.3)}.sound-toggle:focus-visible{outline:3px solid #e9c378;outline-offset:3px}.sound-icon{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}.sound-icon>path:first-child{fill:currentColor;stroke:none}.sound-toggle [hidden]{display:none}@media(max-width:620px){.sound-toggle{width:44px;height:44px;right:16px;bottom:16px}}
+
+
+/* Ajustes de layout: vídeo mais amplo, título limpo e seção de encomenda preenchida */
+.main-video-section{min-height:clamp(300px,54vw,780px)}
+.main-video{min-height:clamp(300px,54vw,780px)}
+.delivery-section{align-items:stretch;grid-template-columns:minmax(0,.86fr) minmax(0,1.14fr);gap:clamp(24px,5vw,72px);padding-top:76px;padding-bottom:76px}
+.delivery-intro{display:flex;flex-direction:column;min-width:0;padding-top:0}
+.delivery-intro h2{font-size:clamp(50px,5.5vw,88px);line-height:.88;margin-top:20px;margin-bottom:22px}
+.delivery-intro p{max-width:none;margin-bottom:0}
+.delivery-promise{max-width:none;margin-top:28px;padding-top:14px}
+.delivery-art{position:relative;flex:1 0 420px;min-height:420px;margin-top:24px;overflow:hidden;border:3px solid #111;background:linear-gradient(145deg,#dcc39a,#6d4a2c);box-shadow:12px 12px 0 #111}
+.delivery-art img{position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:cover;object-position:center}
+@media(max-width:900px){.delivery-section{grid-template-columns:minmax(0,1fr);gap:34px;padding-top:54px;padding-bottom:54px}.delivery-intro{min-height:0}.delivery-art{flex:none;min-height:0;height:min(82vw,560px);aspect-ratio:9/16;margin-top:22px}.checkout-card{min-width:0}}
+@media(max-width:620px){.main-video-section,.main-video{min-height:clamp(300px,78vw,440px)}.delivery-section{gap:26px;padding-top:42px;padding-bottom:42px}.delivery-art{height:min(96vw,470px);box-shadow:7px 7px 0 #111}}
+
+
+/* Contraste da seção clara de encomenda: evita textos brancos invisíveis */
+.delivery-section{background-color:#fff8ee;color:#2b1718}
+.delivery-intro .section-kicker{color:#8e1821;opacity:1}
+.delivery-intro h2{color:#3e0b12}
+.delivery-intro h2 em{color:#8e1821}
+.delivery-intro>p{color:#5f4742;font-weight:500}
+.delivery-promise small{color:#6b5350}
+
+@media(max-width:900px){.delivery-art{height:auto;aspect-ratio:4/5}}
