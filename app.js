@@ -1,5 +1,5 @@
 const UNIT_PRICE = 35;
-const DELIVERY_FEE = 12;
+const DELIVERY_FEE = 0;
 const PIX_KEY_DISPLAY = '61 994431648';
 const PIX_KEY = '+5561994431648';
 const WHATSAPP_NUMBER = '5561994431648';
@@ -126,7 +126,8 @@ function buildOrderMessage() {
   const address = $('#address').value.trim();
   const subtotal = quantity * UNIT_PRICE;
   const total = subtotal + DELIVERY_FEE;
-  return `Olá, BRÁVIA! Quero fazer uma encomenda.\n\n*PEDIDO BRÁVIA*\n• Produto: Garrafa BRÁVIA Original 2L\n• Quantidade: ${quantity} ${quantity === 1 ? 'garrafa' : 'garrafas'}\n• Subtotal: ${money(subtotal)}\n• Taxa de entrega: ${money(DELIVERY_FEE)}\n• *Total: ${money(total)}*\n\n*ENTREGA*\n• Nome: ${name}\n• WhatsApp: ${phone}\n• Cidade: ${city}\n• Endereço: ${address}\n\nVou realizar o pagamento via Pix para a chave ${PIX_KEY_DISPLAY} e enviarei o comprovante por aqui. Aguardo a confirmação da disponibilidade e da entrega. Obrigado!`;
+  return `Olá, BRÁVIA! Quero fazer uma encomenda.\n\n*PEDIDO BRÁVIA*\n• Produto: Garrafa BRÁVIA Original 2L\n• Quantidade: ${quantity} ${quantity === 1 ? 'garrafa' : 'garrafas'}\n• Subtotal: ${money(subtotal)}\n• Taxa de entrega: a consultar para a sua região\n• *Total dos produtos: ${money(subtotal)}*
+• Total final: confirmar com a taxa de entrega\n\n*ENTREGA*\n• Nome: ${name}\n• WhatsApp: ${phone}\n• Cidade: ${city}\n• Endereço: ${address}\n\nVou realizar o pagamento via Pix para a chave ${PIX_KEY_DISPLAY} e enviarei o comprovante por aqui. Aguardo a confirmação da disponibilidade e da entrega. Obrigado!`;
 }
 
 $('#decrease').addEventListener('click', () => { quantity = Math.max(1, quantity - 1); updateSummary(); });
