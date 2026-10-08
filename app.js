@@ -1,4 +1,4 @@
-const UNIT_PRICE = 15;
+const UNIT_PRICE = 35;
 const DELIVERY_FEE = 12;
 const PIX_KEY_DISPLAY = '61 994431648';
 const PIX_KEY = '+5561994431648';
