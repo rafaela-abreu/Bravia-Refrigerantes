@@ -1,13 +1,14 @@
-BRÁVIA — controle de música no vídeo principal
+CORRIGIR O BOTÃO DA MÚSICA — BRÁVIA
 
-Conteúdo:
-- index.html, app.js e styles.css atualizados com o botão de áudio acessível.
-- bravia-main-video.mp4 com a faixa de áudio original removida.
-- bravia-trilha.mp3, música enviada pela proprietária.
-- Bravia-Refrigerantes-audio-toggle.patch com o diff binário integral para aplicar em uma cópia do repositório.
+O botão novo aparecia no site, mas o app.js publicado ainda procurava o botão antigo. Por isso, o clique não chamava a música. O MP3 está publicado e respondendo corretamente; não substitua nem apague o arquivo bravia-trilha.mp3.
 
-Comportamento:
-A música não começa automaticamente. O visitante ativa/desativa pelo ícone no canto do vídeo; quando ligada, toca em volume definido a 12% e em loop. O vídeo permanece sem áudio.
+ATUALIZAÇÃO NO GITHUB
 
-Publicação:
-O push desta alteração foi recusado pelo GitHub com HTTP 403. Para aplicar manualmente, extraia os cinco arquivos do projeto e envie-os ao repositório, sobrescrevendo os arquivos de mesmo nome. O patch binário pode ser aplicado numa cópia Git do repositório com `git apply Bravia-Refrigerantes-audio-toggle.patch`, depois faça commit e push.
+1. Baixe e extraia este ZIP no celular ou computador.
+2. Abra o repositório Bravia-Refrigerantes no GitHub.
+3. Na pasta principal do site, escolha Add file / Upload files.
+4. Envie os dois arquivos extraídos: app.js e index.html. Eles devem ficar na pasta principal, junto do MP3.
+5. Confirme a substituição dos arquivos existentes e conclua em Commit changes.
+6. Aguarde alguns minutos e reabra o site. Toque em “Ouvir a música oficial da Brávia”; use “Desativar música” para parar.
+
+Não apague os outros arquivos do repositório. Esta correção atualiza somente o código do player e a referência de cache do JavaScript.
