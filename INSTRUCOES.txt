@@ -1,0 +1,14 @@
+BRÁVIA — atualização de áudio automático
+
+Envie para a raiz do repositório e substitua os arquivos existentes:
+- index.html
+- app.js
+- bravia-main-video.mp4
+
+O arquivo bravia-trilha.mp3 já está publicado com o nome esperado e não precisa ser enviado novamente.
+
+A música tentará iniciar ao abrir o site, repetirá continuamente e o ícone permitirá pausar/reativar. O volume está em 20% para continuar suave, porém mais audível. O MP4 incluído está sem a faixa sonora original.
+
+Importante: Chrome, Safari e outros navegadores podem bloquear áudio automático com som até a primeira interação do visitante com a página. O site tentará iniciar sozinho; se o navegador bloquear, o visitante precisa tocar no ícone de som. Esse bloqueio é uma regra do navegador e não pode ser forçado pelo código do site.
+
+No GitHub: abra o repositório → Add file → Upload files → envie os três arquivos → Commit changes na branch main. Aguarde o GitHub Pages atualizar.
