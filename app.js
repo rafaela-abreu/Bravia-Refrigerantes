@@ -153,5 +153,41 @@ $('#order-form').addEventListener('submit', (event) => {
 });
 const mainVideo = document.querySelector('.main-video');
 if (mainVideo && window.matchMedia('(prefers-reduced-motion: reduce)').matches) mainVideo.pause();
+
+const backgroundMusic = $('#background-music');
+const soundToggle = $('#sound-toggle');
+const soundWavePaths = document.querySelectorAll('.sound-wave');
+const soundMutedMark = document.querySelector('.sound-muted-mark');
+
+if (backgroundMusic && soundToggle) {
+  backgroundMusic.volume = 0.12;
+
+  const updateSoundControl = (isPlaying) => {
+    soundToggle.setAttribute('aria-pressed', String(isPlaying));
+    soundToggle.setAttribute('aria-label', isPlaying ? 'Desativar música de fundo' : 'Ativar música de fundo');
+    soundToggle.title = isPlaying ? 'Desativar música de fundo' : 'Ativar música de fundo';
+    soundWavePaths.forEach((path) => { path.hidden = !isPlaying; });
+    if (soundMutedMark) soundMutedMark.hidden = isPlaying;
+  };
+
+  soundToggle.addEventListener('click', async () => {
+    if (backgroundMusic.paused) {
+      try {
+        await backgroundMusic.play();
+        updateSoundControl(true);
+      } catch (error) {
+        updateSoundControl(false);
+      }
+    } else {
+      backgroundMusic.pause();
+      updateSoundControl(false);
+    }
+  });
+
+  backgroundMusic.addEventListener('pause', () => updateSoundControl(false));
+  backgroundMusic.addEventListener('play', () => updateSoundControl(true));
+  updateSoundControl(false);
+}
+
 updateSummary();
 updateOrderPreview();
