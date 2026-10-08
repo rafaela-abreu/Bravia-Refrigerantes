@@ -1,0 +1,13 @@
+BRÁVIA — controle de música no vídeo principal
+
+Conteúdo:
+- index.html, app.js e styles.css atualizados com o botão de áudio acessível.
+- bravia-main-video.mp4 com a faixa de áudio original removida.
+- bravia-trilha.mp3, música enviada pela proprietária.
+- Bravia-Refrigerantes-audio-toggle.patch com o diff binário integral para aplicar em uma cópia do repositório.
+
+Comportamento:
+A música não começa automaticamente. O visitante ativa/desativa pelo ícone no canto do vídeo; quando ligada, toca em volume definido a 12% e em loop. O vídeo permanece sem áudio.
+
+Publicação:
+O push desta alteração foi recusado pelo GitHub com HTTP 403. Para aplicar manualmente, extraia os cinco arquivos do projeto e envie-os ao repositório, sobrescrevendo os arquivos de mesmo nome. O patch binário pode ser aplicado numa cópia Git do repositório com `git apply Bravia-Refrigerantes-audio-toggle.patch`, depois faça commit e push.

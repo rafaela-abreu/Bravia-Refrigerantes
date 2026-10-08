@@ -37,6 +37,17 @@
           <source src="bravia-main-video.mp4" type="video/mp4" />
           Seu navegador não consegue reproduzir o vídeo da Brávia.
         </video>
+        <audio id="background-music" loop preload="none" aria-label="Música de fundo da BRÁVIA">
+          <source src="bravia-trilha.mp3" type="audio/mpeg" />
+        </audio>
+        <button class="sound-toggle" id="sound-toggle" type="button" aria-label="Ativar música de fundo" aria-pressed="false">
+          <svg class="sound-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M11 5 6 9H3v6h3l5 4V5Z"></path>
+            <path class="sound-wave" d="M15.5 8.5a5 5 0 0 1 0 7"></path>
+            <path class="sound-wave" d="M18.5 5.5a9 9 0 0 1 0 13"></path>
+            <path class="sound-muted-mark" d="m16 9 5 6m0-6-5 6"></path>
+          </svg>
+        </button>
         <div class="video-overlay"><span class="video-kicker">BRÁVIA REFRIGERANTES</span><strong>Uma bebida nativa.<br />Uma história viva.</strong><span class="video-loop">vídeo de divulgação · reprodução contínua</span></div>
       </section>
       <section class="hero section-shell" aria-labelledby="hero-title">
