@@ -130,28 +130,30 @@ function buildOrderMessage() {
 • Total final: confirmar com a taxa de entrega\n\n*ENTREGA*\n• Nome: ${name}\n• WhatsApp: ${phone}\n• Cidade: ${city}\n• Endereço: ${address}\n\nVou realizar o pagamento via Pix para a chave ${PIX_KEY_DISPLAY} e enviarei o comprovante por aqui. Aguardo a confirmação da disponibilidade e da entrega. Obrigado!`;
 }
 
-$('#decrease').addEventListener('click', () => { quantity = Math.max(1, quantity - 1); updateSummary(); });
-$('#increase').addEventListener('click', () => { quantity = Math.min(20, quantity + 1); updateSummary(); });
-$('#copy-key').addEventListener('click', (event) => copyText(PIX_KEY_DISPLAY, event.currentTarget, 'Chave copiada'));
-$('#copy-code').addEventListener('click', (event) => copyText(pixPayload, event.currentTarget, 'Código copiado'));
-$('#order-form').addEventListener('submit', (event) => {
-  event.preventDefault();
-  if (!validateForm()) return;
-  setFeedback('Abrindo o WhatsApp com os detalhes da sua encomenda…');
-  const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(buildOrderMessage())}`;
-  const whatsappWindow = window.open(url, '_blank', 'noopener,noreferrer');
-  if (!whatsappWindow) setFeedback('O navegador bloqueou a abertura. Use o botão do WhatsApp e permita pop-ups para concluir.', true);
-});
-
-['#customer-name', '#customer-phone', '#city', '#address'].forEach((selector) => {
-  $(selector).addEventListener('input', (event) => {
-    event.currentTarget.classList.remove('has-error');
-    event.currentTarget.setAttribute('aria-invalid', 'false');
-    const error = document.querySelector(`${selector}-error`);
-    if (error) error.textContent = '';
-    updateOrderPreview();
+const legacyOrderForm = $('#order-form');
+if (legacyOrderForm) {
+  $('#decrease').addEventListener('click', () => { quantity = Math.max(1, quantity - 1); updateSummary(); });
+  $('#increase').addEventListener('click', () => { quantity = Math.min(20, quantity + 1); updateSummary(); });
+  $('#copy-key').addEventListener('click', (event) => copyText(PIX_KEY_DISPLAY, event.currentTarget, 'Chave copiada'));
+  $('#copy-code').addEventListener('click', (event) => copyText(pixPayload, event.currentTarget, 'Código copiado'));
+  legacyOrderForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+    if (!validateForm()) return;
+    setFeedback('Abrindo o WhatsApp com os detalhes da sua encomenda…');
+    const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(buildOrderMessage())}`;
+    const whatsappWindow = window.open(url, '_blank', 'noopener,noreferrer');
+    if (!whatsappWindow) setFeedback('O navegador bloqueou a abertura. Use o botão do WhatsApp e permita pop-ups para concluir.', true);
   });
-});
+  ['#customer-name', '#customer-phone', '#city', '#address'].forEach((selector) => {
+    $(selector).addEventListener('input', (event) => {
+      event.currentTarget.classList.remove('has-error');
+      event.currentTarget.setAttribute('aria-invalid', 'false');
+      const error = document.querySelector(`${selector}-error`);
+      if (error) error.textContent = '';
+      updateOrderPreview();
+    });
+  });
+}
 const mainVideo = document.querySelector('.main-video');
 if (mainVideo && window.matchMedia('(prefers-reduced-motion: reduce)').matches) mainVideo.pause();
 
@@ -205,5 +207,7 @@ if (backgroundMusic && musicPlayerCard && musicPlayToggle && musicDisable && mus
   updateMusicPlayer(false, 'Clique para ouvir · repetição contínua');
 }
 
-updateSummary();
-updateOrderPreview();
+if (legacyOrderForm) {
+  updateSummary();
+  updateOrderPreview();
+}
